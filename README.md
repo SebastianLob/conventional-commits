@@ -3,3 +3,4 @@
 ### Example repo for implementing commit messages validation
 
 - bbb
+--c
