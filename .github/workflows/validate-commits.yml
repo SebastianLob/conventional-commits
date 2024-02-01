@@ -1,26 +1,13 @@
-name: Validate Commit Messages
+name: Lint Commit Messages
+on: [pull_request]
 
-on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
-  validate-commits:
+  commitlint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Validate commit messages
-        run: npx commitlint --from=origin/HEAD --to=HEAD
+      - uses: actions/checkout@v3
+      - uses: wagoid/commitlint-github-action@v5
