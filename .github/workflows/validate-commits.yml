@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Validate commit messages
-        run: npx commitlint --from=HEAD~1 --to=HEAD
+        run: npx commitlint --from=origin/HEAD --to=HEAD
