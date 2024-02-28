@@ -22,7 +22,7 @@ jobs:
         HEAD_BRANCH=$(echo $GITHUB_HEAD_REF)
 
         # Check if the base branch is "dev" and the head branch is not "qa" or "main"
-        if [ "$BASE_BRANCH" == "dev" ] && [ "$HEAD_BRANCH" != "qa" ] && [ "$HEAD_BRANCH" != "main" ]; then
+        if [ "$BASE_BRANCH" == "develop" ] && [ "$HEAD_BRANCH" != "qa" ] && [ "$HEAD_BRANCH" != "main" ]; then
           # Get the current version in the base branch
           BASE_VERSION=$(git show origin/dev:package.json | jq -r '.version')
 
