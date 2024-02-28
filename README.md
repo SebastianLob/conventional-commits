@@ -2,4 +2,4 @@
 
 ### Example repo for implementing commit messages validation
 
-#asdasd
+asdasdasdasd
